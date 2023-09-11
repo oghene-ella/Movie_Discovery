@@ -8,7 +8,6 @@ const Movies = () => {
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
-		// Replace 'YOUR_API_KEY' with your actual TMDb API key
 		const apiKey = "329676d84f34a8fa40b316a1fb6712a6";
 		const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
 
