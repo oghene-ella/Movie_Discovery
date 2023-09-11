@@ -10,7 +10,7 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				hero_bg: "url('./src/assets/background-bg.svg')",
+				hero_bg: "url('../src/assets/background-bg.svg')",
 			},
 		},
 	},
