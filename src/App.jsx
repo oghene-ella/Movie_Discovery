@@ -1,11 +1,18 @@
-function App() {
+import Navbar from "./components/navbar";
+import MovieHeroData from "./components/movie_hero_data"
+const App = () => {
 
   return (
-		<>
-			<h1 className="bg-slate-700 text-6xl text-white p-10 font-dm_sans">
-				Stage 2 Task!
-			</h1>
-		</>
+    // wrapper
+		<section className="border border-red-500 h-[120rem]">
+
+      {/* hero-section */}
+      <section className="h-[37.5rem] bg-hero_bg flex flex-col gap-10">
+        <Navbar />
+        <MovieHeroData />
+      </section>
+
+    </section>
 	);
 }
 
