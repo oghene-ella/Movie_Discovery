@@ -2,10 +2,17 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
+		// colors: {
+		// 	button: "#BE123C"
+		// },
 		fontFamily: {
-			dm_sans: ["DM Sans", "sans-serif"]
+			dm_sans: ["DM Sans", "sans-serif"],
 		},
-		extend: {},
+		extend: {
+			backgroundImage: {
+				hero_bg: "url('./src/assets/background-bg.svg')",
+			},
+		},
 	},
 	plugins: [],
 };
