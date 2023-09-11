@@ -4,7 +4,7 @@ import tomatoe from "../assets/icons/tomatoe-icon.svg"
 import play from "../assets/icons/Play.svg"
 
 const movie_hero_data = () => {
-  return (
+	return (
 		<section className="text-white w-full h-2/3 flex justify-end">
 			<main className="w-11/12 h-full flex">
 				{/* hero_data */}
@@ -30,7 +30,7 @@ const movie_hero_data = () => {
 							international assassins guild, and with a $14 million price tag on
 							his head, he is the target of hit men and women everywhere.
 						</p>
-						<button className="flex items-center bg-[#BE123C] px-5 py-2 rounded-md w-fit flex gap-3 uppercase font-semibold">
+						<button className="flex items-center bg-my-pink px-5 py-2 rounded-md w-fit flex gap-3 uppercase font-semibold">
 							<img src={play} />
 							Watch Trailer
 						</button>
