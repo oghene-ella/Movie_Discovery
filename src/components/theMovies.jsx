@@ -25,7 +25,7 @@ const Movies = () => {
 		<section className="font-dm_sans w-full py-14 flex flex-col gap-16">
 			{/* movie list header */}
 			<header className="flex w-10/12 justify-between mx-auto">
-				<h1 className="text-4xl font-semibold">Top 10 Movies</h1>
+				<h1 className="text-4xl font-semibold">Featured Movies</h1>
 				<span className="flex items-center gap-4">
 					<p className="text-my-pink">See more</p>
 					<img src={chervon} />
