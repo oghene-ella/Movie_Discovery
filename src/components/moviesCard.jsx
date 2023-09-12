@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+
 
 // eslint-disable-next-line react/prop-types
 const MovieCard = ({ movie }) => {
@@ -17,17 +19,20 @@ const MovieCard = ({ movie }) => {
 			className="movie-card font-dm_sans flex flex-col gap-2 relative"
 			data-testid="movie-card"
 		>
+			{/* <Link to="/:id">Book 1</Link> */}
 			<img
 				src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
 				alt={movie.title}
 				data-testid="movie-poster"
 			/>
 
-			<h2 data-testid="movie-title" className="text-xl font-bold ">
-				{movie.title}
-			</h2>
+			<Link to="/:id">
+				<h2 data-testid="movie-title" className="text-xl font-bold ">
+					{movie.title}
+				</h2>
 
-			<p data-testid="movie-release-date">{movie.release_date}</p>
+				<p data-testid="movie-release-date">{movie.release_date}</p>
+			</Link>
 
 			<span className="absolute bg-zinc-400 flex px-2 p-2 rounded-full w-fit cursor-pointer top-4 right-0 mx-3">
 				<FontAwesomeIcon
@@ -37,6 +42,7 @@ const MovieCard = ({ movie }) => {
 					onClick={handleClick}
 				/>
 			</span>
+			<Outlet />
 		</section>
 	);
 };

@@ -1,30 +1,17 @@
-import Navbar from "./components/navbar";
-import MovieHeroData from "./components/movie_hero_data"
-import Movies from "./components/theMovies"
-import Footer from "./components/footer"
+import { Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home.jsx";
+import MovieIdCard from "./pages/MovieIdCard.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const App = () => {
-
-  return (
-    // wrapper
-		<section className="h-fit">
-
-      {/* hero-section */}
-      <section className="h-[37.5rem] bg-hero_bg flex flex-col gap-10">
-        <Navbar />
-        <MovieHeroData />
-      </section>
-
-      {/* List of Movies */}
-      <section>
-        <Movies />
-      </section>
-
-      {/* footer-section */}
-      <Footer />
-
-    </section>
+	return (
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/:id" element={<MovieIdCard />} />
+			<Route path="*" element={<NotFound />} />
+		</Routes>
 	);
-}
+};
 
-export default App
+export default App;
