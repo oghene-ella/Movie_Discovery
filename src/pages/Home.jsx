@@ -8,7 +8,7 @@ const Home = () => {
 		// wrapper
 		<section className="h-fit">
 			{/* hero-section */}
-			<section className="h-[37.5rem] bg-hero_bg flex flex-col gap-10">
+			<section className="h-[37.5rem] bg-hero_bg bg-cover bg-center flex flex-col gap-10">
 				<Navbar />
 				<MovieHeroData />
 			</section>
