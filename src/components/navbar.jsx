@@ -1,7 +1,7 @@
 import Logo from "../assets/logo/logo-svg.svg"
 import menuIcon from "../assets/icons/Menu.svg"
 
-import SearchBar from "./SearchBar"
+import SearchBar from "./searchBar"
 
 const navbar = () => {
   return (
