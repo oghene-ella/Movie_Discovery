@@ -27,7 +27,7 @@ const SearchBar = () => {
 }, [searchQuery]);
 
 	return (
-		<section className="flex justify-between w-1/2 border border-gray-100 rounded-md">
+		<section className="flex md:w-1/2 justify-between border border-gray-100 rounded-md">
 			<input
 				type="search"
 				className="w-full bg-transparent placeholder-white placeholder-opacity-70 px-5 py-1"

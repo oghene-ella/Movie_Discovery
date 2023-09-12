@@ -8,14 +8,14 @@ const movie_hero_data = () => {
 		<section className="text-white w-full h-2/3 flex justify-end">
 			<main className="w-11/12 h-full flex">
 				{/* hero_data */}
-				<section className="w-1/2 h-full flex flex-col gap-4">
+				<section className="w-2/3 h-full flex flex-col gap-4">
 					<section className="w-full h-fit flex my-auto flex-col gap-4">
-						<h1 className="text-5xl font-semibold leading-tight">
+						<h1 className="text-3xl md:text-5xl font-semibold leading-8">
 							John Wick 3 :
 							<br />
 							Parabellum
 						</h1>
-						<section className="flex gap-5">
+						<section className="flex flex-col md:flex-row gap-3 md:gap-5">
 							<span className="flex gap-3">
 								<img src={imdb_icon} />
 								<p>86.0 / 100</p>
@@ -25,12 +25,12 @@ const movie_hero_data = () => {
 								<p>86.0 / 100</p>
 							</span>
 						</section>
-						<p className="w-[21rem]">
+						<p className="text-sm lg:w-[21rem]">
 							John Wick is on the run after killing a member of the
 							international assassins guild, and with a $14 million price tag on
 							his head, he is the target of hit men and women everywhere.
 						</p>
-						<button className="flex items-center bg-my-pink px-5 py-2 rounded-md w-fit flex gap-3 uppercase font-semibold">
+						<button className="flex items-center bg-my-pink px-1 md:px-5 py-2 rounded-md w-fit gap-1 md:gap-3 uppercase font-semibold text-base">
 							<img src={play} />
 							Watch Trailer
 						</button>
@@ -38,7 +38,7 @@ const movie_hero_data = () => {
 				</section>
 
 				{/* scroller */}
-				<section className="w-1/2 h-full flex justify-end items-center px-10">
+				<section className="w-1/3 h-full flex justify-end items-center px-10">
 					<ul className="w-fit h-fit text-right text-gray-400">
 						<li>1</li>
 						<li>2</li>
