@@ -31,7 +31,10 @@ const MovieCard = ({ movie }) => {
 					{movie.title}
 				</h2>
 
-				<p data-testid="movie-release-date">{movie.release_date}</p>
+				<span className="flex gap-2">
+					<h3>Release Date: </h3>
+					<p data-testid="movie-release-date">{movie.release_date}</p>
+				</span>
 			</Link>
 
 			<span className="absolute bg-zinc-400 flex px-2 p-2 rounded-full w-fit cursor-pointer top-4 right-0 mx-3">

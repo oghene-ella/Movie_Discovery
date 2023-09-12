@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import MovieCard from './moviesCard';
 import search from "../assets/icons/search.svg"
 
 const SearchBar = () => {
@@ -34,18 +35,12 @@ const SearchBar = () => {
 				value={searchQuery}
 				onChange={(e) => setSearchQuery(e.target.value)}
 			/>
-			<img src={search} className="px-4" />
+			<img src={search}  className='px-4'/>
+			
 
-			{/* working on this */}
 			<main className="movie-container">
 				{searchResults.map((movie) => (
-					<section key={movie.id} className='absolute' >
-						<h2 data-testid="movie-title" className="text-xl font-bold ">
-							{movie.title}
-						</h2>
-
-						<p data-testid="movie-release-date">{movie.release_date}</p>
-					</section>
+				<MovieCard key={movie.id} movie={movie} />
 				))}
 			</main>
 		</section>

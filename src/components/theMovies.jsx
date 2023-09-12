@@ -33,7 +33,7 @@ const Movies = () => {
 			</header>
 
 			{/* movie list body */}
-			<main className="movie-container w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-7">
+			<main className="movie-container w-10/12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-9">
 				{movies.map(function (movie, index) {
 					if (index < 10) {
 						return (
