@@ -13,6 +13,7 @@ export default {
 				"my-black": "#111827",
 				"my-gray": "#6B7280",
 				"my-pink": "#BE123C",
+				"my-light-gray": "#7A7B83",
 			},
 		},
 	},
