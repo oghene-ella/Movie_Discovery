@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
-import vidTest from "../../assets/watch.svg";
+// import vidTest from "../../assets/watch.svg";
 import star from "../../assets/icons/Star.svg";
 import moviesImg from "../../assets/movies.png";
 import tickets from "../../assets/icons/Tickets.svg";
@@ -17,27 +17,33 @@ const MainContent = () => {
 
 	useEffect(() => {
 		const apiKey = import.meta.env.VITE_API_KEY;
-		const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
+		const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
 
 		axios
 			.get(apiUrl)
 			.then((response) => {
-				console.log((response.data.results));
-				setMovieInfo(response.data.results);
+				console.log(response.data.genres[0].name);
+				setMovieInfo(response.data);
 			})
 			.catch((error) => {
 				console.error("Error fetching data: ", error);
 			});
 	}, [id]);
 
-	if (!movieInfo){
-		return <section>Loading...</section>
+	if (!movieInfo) {
+		return <section>Loading...</section>;
 	}
 
 	return (
-		<section className="w-5/6 flex items-center px-5">
+		<section className="w-5/6 flex items-center px-5" key={movieInfo.id}>
 			<main className="w-full h-[54rem] flex flex-col py-4">
-				<img src={vidTest} className="w-screen bg-cover cursor-pointer" />
+				{/* <img src={vidTest} className="w-screen bg-cover cursor-pointer" /> */}
+				<img
+					src={`https://image.tmdb.org/t/p/original${movieInfo.backdrop_path}`}
+					alt={movieInfo.title}
+					data-testid="movie-poster"
+					className="w-screen bg-cover cursor-pointer h-[28rem] rounded-2xl"
+				/>
 				<section className="w-full h-2/3 flex">
 					{/* movie info */}
 					<section className="w-2/3 p-5 flex flex-col gap-4">
@@ -48,29 +54,31 @@ const MainContent = () => {
 								{/* movie title */}
 								<h1 data-testid="movie-title">{movieInfo.original_title}</h1>
 								<p>•</p>
-								<p data-testid="movie-release-date">2022 </p>
+								<span className="flex gap-2">
+									<p data-testid="movie-release-date">
+										{movieInfo.release_date}
+									</p>
+									<p>(UTC)</p>
+								</span>
 								<p>•</p>
-								<p data-testid="movie-runtime">2h 10m</p>
+								<span className="flex gap-2">
+									<p data-testid="movie-runtime">{movieInfo.runtime}</p>
+									<p>(Minutes)</p>
+								</span>
 
 								{/* movie genre */}
 								<span className="flex gap-4 px-3">
-									<p className="text-sm px-5 py-1 border border-pink-200 rounded-2xl text-my-pink font-semibold">
-										Action
-									</p>
 									<p className="text-sm px-5 py-1 border border-pink-200 rounded-2xl text-my-pink font-semibold">
 										Drama
 									</p>
 								</span>
 							</span>
-
 							{/* movie description */}
 							<p
 								className="text-xl font-light w-11/12"
-								data-testid="movie-overview">
-								After thirty years, Maverick is still pushing the envelope as a
-								top naval aviator, but must confront ghosts of his past when he
-								leads TOP GUNs elite graduates on a mission that demands the
-								ultimate sacrifice from those chosen to fly it.
+								data-testid="movie-overview"
+							>
+								{movieInfo.overview}
 							</p>
 						</section>
 
