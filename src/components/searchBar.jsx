@@ -1,30 +1,29 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import MovieCard from './moviesCard';
-import search from "../assets/icons/search.svg"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import MovieCard from "./Homepage/moviesCard";
+import search from "../assets/icons/search.svg";
 
 const SearchBar = () => {
-	const [searchQuery, setSearchQuery] = useState('');
+	const [searchQuery, setSearchQuery] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
 
 	useEffect(() => {
-    if (searchQuery) {
-		const apiKey = '329676d84f34a8fa40b316a1fb6712a6';
-		const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchQuery}`;
+		if (searchQuery) {
+			const apiKey = "329676d84f34a8fa40b316a1fb6712a6";
+			const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchQuery}`;
 
-		axios
-			.get(apiUrl)
-			.then((response) => {
-			setSearchResults(response.data.results);
-			})
-			.catch((error) => {
-			console.error('Error fetching data: ', error);
-			});
-		} 
-	else {
-		setSearchResults([]);
-    }
-}, [searchQuery]);
+			axios
+				.get(apiUrl)
+				.then((response) => {
+					setSearchResults(response.data.results);
+				})
+				.catch((error) => {
+					console.error("Error fetching data: ", error);
+				});
+		} else {
+			setSearchResults([]);
+		}
+	}, [searchQuery]);
 
 	return (
 		<section className="flex justify-between w-1/2 border border-gray-100 rounded-md">
@@ -35,12 +34,11 @@ const SearchBar = () => {
 				value={searchQuery}
 				onChange={(e) => setSearchQuery(e.target.value)}
 			/>
-			<img src={search}  className='px-4'/>
-			
+			<img src={search} className="px-4" />
 
 			<main className="movie-container">
 				{searchResults.map((movie) => (
-				<MovieCard key={movie.id} movie={movie} />
+					<MovieCard key={movie.id} movie={movie} />
 				))}
 			</main>
 		</section>

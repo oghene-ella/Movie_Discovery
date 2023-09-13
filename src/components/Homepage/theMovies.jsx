@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import MovieCard from "./moviesCard";
 
-import chervon from "../assets/icons/Chevron right.svg"
+import chervon from "../../assets/icons/Chevron right.svg";
 
 const Movies = () => {
 	const [movies, setMovies] = useState([]);
-
 	useEffect(() => {
-		const apiKey = "329676d84f34a8fa40b316a1fb6712a6";
+		const apiKey = process.env.API_KEY;
+
 		const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
 
 		axios

@@ -1,7 +1,7 @@
-import line_icon from "../assets/icons/line-icon.svg"
-import imdb_icon from "../assets/icons/imdb-icon.svg"
-import tomatoe from "../assets/icons/tomatoe-icon.svg"
-import play from "../assets/icons/Play.svg"
+import line_icon from "../../assets/icons/line-icon.svg"
+import imdb_icon from "../../assets/icons/imdb-icon.svg"
+import tomatoe from "../../assets/icons/tomatoe-icon.svg"
+import play from "../../assets/icons/Play.svg"
 
 const movie_hero_data = () => {
 	return (

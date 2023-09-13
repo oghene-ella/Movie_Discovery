@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 
-// eslint-disable-next-line react/prop-types
 const MovieCard = ({ movie }) => {
 	const [isClicked, setIsClicked] = useState(false);
 
@@ -19,14 +18,13 @@ const MovieCard = ({ movie }) => {
 			className="movie-card font-dm_sans flex flex-col gap-2 relative"
 			data-testid="movie-card"
 		>
-			{/* <Link to="/:id">Book 1</Link> */}
 			<img
-				src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+				src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
 				alt={movie.title}
 				data-testid="movie-poster"
 			/>
 
-			<Link to="/:id">
+			<Link to="/movies/238" key={movie.id}>
 				<h2 data-testid="movie-title" className="text-xl font-bold ">
 					{movie.title}
 				</h2>

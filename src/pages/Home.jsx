@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
-import MovieHeroData from "../components/movie_hero_data";
-import Movies from "../components/theMovies";
+import MovieHeroData from "../components/Homepage/movie_hero_data";
+import Movies from "../components/Homepage/theMovies";
 import Footer from "../components/footer";
 
 const Home = () => {

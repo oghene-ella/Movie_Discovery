@@ -1,13 +1,39 @@
+import { useEffect, useState } from "react";
+import {useParams} from "react-router-dom";
+import axios from "axios";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import vidTest from "../../assets/watch.svg";
-import star from "../../assets/icons/Star.svg"
-import moviesImg from "../../assets/movies.png"
-import tickets from "../../assets/icons/Tickets.svg"
-import menu from "../../assets/icons/List.svg"
+import star from "../../assets/icons/Star.svg";
+import moviesImg from "../../assets/movies.png";
+import tickets from "../../assets/icons/Tickets.svg";
+import menu from "../../assets/icons/List.svg";
 
-const mainContent = () => {
+const MainContent = () => {
+	const { id } = useParams();
+	const [movieInfo, setMovieInfo] = useState([]);
+
+	useEffect(() => {
+		const apiKey = "329676d84f34a8fa40b316a1fb6712a6";
+		const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
+
+		axios
+			.get(apiUrl)
+			.then((response) => {
+				console.log((response.data.results));
+				setMovieInfo(response.data.results);
+			})
+			.catch((error) => {
+				console.error("Error fetching data: ", error);
+			});
+	}, [id]);
+
+	if (!movieInfo){
+		return <section>Loading...</section>
+	}
+
 	return (
 		<section className="w-5/6 flex items-center px-5">
 			<main className="w-full h-[54rem] flex flex-col py-4">
@@ -20,13 +46,11 @@ const mainContent = () => {
 							{/* movie title */}
 							<span className="flex gap-3 font-medium text-2xl text-header-black items-center">
 								{/* movie title */}
-								<h1>Top Gun: Maverick</h1>
+								<h1 data-testid="movie-title">{movieInfo.original_title}</h1>
 								<p>•</p>
-								<p>2022 </p>
+								<p data-testid="movie-release-date">2022 </p>
 								<p>•</p>
-								<p>PG-13</p>
-								<p>•</p>
-								<p>2h 10m</p>
+								<p data-testid="movie-runtime">2h 10m</p>
 
 								{/* movie genre */}
 								<span className="flex gap-4 px-3">
@@ -40,7 +64,9 @@ const mainContent = () => {
 							</span>
 
 							{/* movie description */}
-							<p className="text-xl font-light w-11/12">
+							<p
+								className="text-xl font-light w-11/12"
+								data-testid="movie-overview">
 								After thirty years, Maverick is still pushing the envelope as a
 								top naval aviator, but must confront ghosts of his past when he
 								leads TOP GUNs elite graduates on a mission that demands the
@@ -122,4 +148,4 @@ const mainContent = () => {
 	);
 };
 
-export default mainContent;
+export default MainContent;
