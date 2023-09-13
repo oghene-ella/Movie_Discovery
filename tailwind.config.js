@@ -5,6 +5,7 @@ export default {
 		extend: {
 			backgroundImage: {
 				hero_bg: "url('../src/assets/background-bg.svg')",
+				vid_bg: "url('../src/assets/watch.svg')"
 			},
 			fontFamily: {
 				dm_sans: ["DM Sans", "sans-serif"],
@@ -19,6 +20,7 @@ export default {
 				"button-pink": "#F0C8D2",
 				"text-gray": "#333333",
 				"pink-border": "#DC7E95",
+				"header-black": "#404040",
 			},
 		},
 	},
