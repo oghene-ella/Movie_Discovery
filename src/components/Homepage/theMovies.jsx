@@ -6,9 +6,9 @@ import chervon from "../../assets/icons/Chevron right.svg";
 
 const Movies = () => {
 	const [movies, setMovies] = useState([]);
-	useEffect(() => {
-		const apiKey = process.env.API_KEY;
 
+	useEffect(() => {
+		const apiKey = import.meta.env.VITE_API_KEY;
 		const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
 
 		axios

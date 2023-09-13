@@ -16,7 +16,7 @@ const MainContent = () => {
 	const [movieInfo, setMovieInfo] = useState([]);
 
 	useEffect(() => {
-		const apiKey = "329676d84f34a8fa40b316a1fb6712a6";
+		const apiKey = import.meta.env.VITE_API_KEY;
 		const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
 
 		axios
