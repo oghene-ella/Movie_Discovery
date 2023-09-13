@@ -44,7 +44,7 @@ const Sidebar = () => {
 					{/* upcoming */}
 					<span className="flex gap-4 px-7 py-5">
 						<img src={calendar} className="w-6" />
-						<a href="/" className="text-lg text-my-light-gray font-semibold">
+						<a href="" className="text-lg text-my-light-gray font-semibold">
 							Upcoming
 						</a>
 					</span>
