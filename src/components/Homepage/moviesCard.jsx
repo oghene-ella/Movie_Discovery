@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
 				data-testid="movie-poster"
 			/>
 
-			<Link to="/movies/" key={movie.id}>
+			<Link to="/movies/:id" key={movie.id}>
 				<h2 data-testid="movie-title" className="text-xl font-bold ">
 					{movie.title}
 				</h2>
