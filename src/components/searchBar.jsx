@@ -5,7 +5,6 @@ import search from "../assets/icons/search.svg";
 
 const SearchBar = () => {
 	const [searchQuery, setSearchQuery] = useState("");
-	// eslint-disable-next-line no-unused-vars
 	const [searchResults, setSearchResults] = useState([]);
 
 	useEffect(() => {
