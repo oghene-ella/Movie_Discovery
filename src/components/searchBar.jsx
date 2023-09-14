@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MovieCard from "./Homepage/moviesCard";
+// import MovieCard from "./Homepage/moviesCard";
 import search from "../assets/icons/search.svg";
 
 const SearchBar = () => {
@@ -36,11 +36,13 @@ const SearchBar = () => {
 			/>
 			<img src={search} className="px-4" />
 
-			<main className="movie-container">
+			{/* Still unable to fix the searchbar [Disable it for now] */}
+
+			{/* <main className="movie-container">
 				{searchResults.map((movie) => (
 					<MovieCard key={movie.id} movie={movie} />
 				))}
-			</main>
+			</main> */}
 		</section>
 	);
 };
