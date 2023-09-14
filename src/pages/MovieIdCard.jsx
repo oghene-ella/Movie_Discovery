@@ -3,7 +3,7 @@ import MainContent from"../components/Routed_Page/mainContent"
 
 const MovieIdCard = () => {
   return (
-    <section className="w-full h-screen flex">
+    <section className="w-full h-screen flex relative">
       <Sidebar/>
       <MainContent />
     </section>
