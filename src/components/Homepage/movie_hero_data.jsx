@@ -1,3 +1,4 @@
+// Imported custom Icons
 import line_icon from "../../assets/icons/line-icon.svg"
 import imdb_icon from "../../assets/icons/imdb-icon.svg"
 import tomatoe from "../../assets/icons/tomatoe-icon.svg"
@@ -10,11 +11,13 @@ const movie_hero_data = () => {
 				{/* hero_data */}
 				<section className="w-2/3 h-full flex flex-col gap-4">
 					<section className="w-full h-fit flex my-auto flex-col gap-4">
+						{/* header */}
 						<h1 className="text-3xl md:text-5xl font-semibold leading-8">
 							John Wick 3 :
 							<br />
 							Parabellum
 						</h1>
+						{/* ratings */}
 						<section className="flex flex-col md:flex-row gap-3 md:gap-5">
 							<span className="flex gap-3">
 								<img src={imdb_icon} />
@@ -25,11 +28,14 @@ const movie_hero_data = () => {
 								<p>86.0 / 100</p>
 							</span>
 						</section>
+						{/* overviews */}
 						<p className="text-sm lg:w-[21rem]">
 							John Wick is on the run after killing a member of the
 							international assassins guild, and with a $14 million price tag on
 							his head, he is the target of hit men and women everywhere.
 						</p>
+
+						{/* watch trailer */}
 						<button className="flex items-center bg-my-pink px-1 md:px-5 py-2 rounded-md w-fit gap-1 md:gap-3 uppercase font-semibold text-base">
 							<img src={play} />
 							Watch Trailer

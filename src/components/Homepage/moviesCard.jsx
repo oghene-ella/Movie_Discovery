@@ -7,6 +7,7 @@ import { Link, Outlet } from "react-router-dom";
 
 
 const MovieCard = ({ movie }) => {
+	const { id } = movie;
 	const [isClicked, setIsClicked] = useState(false);
 
 	const handleClick = () => {
@@ -24,7 +25,7 @@ const MovieCard = ({ movie }) => {
 				data-testid="movie-poster"
 			/>
 
-			<Link to="/movies/129" key={movie.id}>
+			<Link to={`/movies/${id}`} key={movie.id}>
 				<h2 data-testid="movie-title" className="text-xl font-bold ">
 					{movie.title}
 				</h2>
