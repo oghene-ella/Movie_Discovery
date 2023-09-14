@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 
 
 const SearchResult = ({ movie }) => {
-	const {id}  = movie.id;
+	const { id }  = movie;
 
 	return (
 		<section
